@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4EBCC5B4-AE35-4520-B3BE-31AED696D058}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NgDbConsoleApp</RootNamespace>
+    <AssemblyName>NgDbConsoleApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbEngine\Indexing\DbIndexUniqueness.cs" />
+    <Compile Include="DbEngine\Indexing\DbIndexSortOrder.cs" />
+    <Compile Include="DbEngine\Storage\DbObjectType.cs" />
+    <Compile Include="DbEngine\Storage\FileSystem\DbStreamOptions.cs" />
+    <Compile Include="Formatters\AdvancedBinaryFormatter.cs" />
+    <Compile Include="DbEngine\Common\DbSearcher.cs" />
+    <Compile Include="Utils\SerializationUtil.cs" />
+    <Compile Include="Utils\DiskUtil.cs" />
+    <Compile Include="Utils\FileUtil.cs" />
+    <Compile Include="DbEngine\Indexing\BPlusTree.cs" />
+    <Compile Include="DbEngine\Indexing\BTreeNode.cs" />
+    <Compile Include="DbEngine\Storage\InMemory\DbMemoryStorage.cs" />
+    <Compile Include="DbEngine\Storage\FileSystem\DbFileStorage.cs" />
+    <Compile Include="DbEngine\Storage\IDbStorage.cs" />
+    <Compile Include="IO\AlignedStream.cs" />
+    <Compile Include="IO\WriteBufferStream.cs" />
+    <Compile Include="Common\CommonUtil.cs" />
+    <Compile Include="DbEngine\Storage\DbDataStore.cs" />
+    <Compile Include="DbEngine\Common\DbColumn.cs" />
+    <Compile Include="DbEngine\Indexing\DbComparer.cs" />
+    <Compile Include="DbEngine\Indexing\DbIndex.cs" />
+    <Compile Include="DbEngine\Common\DbRow.cs" />
+    <Compile Include="DbEngine\Common\DbTable.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
